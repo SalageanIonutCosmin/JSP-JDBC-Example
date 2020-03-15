@@ -11,7 +11,7 @@ public class CompanyRepository {
 
     private static final String ADD_COMPANY = "insert into company" + "(name,domain,createdAt) values" + "(?,?,?)";
     private static final String SELECT_COMPANY_BY_ID = "select id,name,domain,createdAt from company where id =?";
-    private static final String SELECT_ALL_COMPANIES = "select * from company";
+    private static final String SELECT_ALL_COMPANIES = "select * from company.company";
     private static final String DELETE_COMPANY = "delete from company where id = ?;";
     private static final String UPDATE_COMPANY = "update company set name = ?,domain= ?, createdAt =? where id = ?;";
 

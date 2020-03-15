@@ -20,6 +20,8 @@ public class CompanyListServlet extends HttpServlet {
         List<Company> companyList = companyRepository.findAllCompanies();
         request.setAttribute("companyList", companyList);
         request.getRequestDispatcher("companyListView.jsp").forward(request, response);
-
+        for (Company c : companyList) {
+            System.out.println(c);
+        }
     }
 }

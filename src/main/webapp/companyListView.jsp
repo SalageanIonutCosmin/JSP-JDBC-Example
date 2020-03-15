@@ -1,4 +1,4 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +18,7 @@
     </th>
     <th>Date</th>
     </thead>
+    <tbody>
     <c:forEach items="${companyList}" var="c">
         <tr>
             <td>${c.getId()}</td>
@@ -38,6 +39,7 @@
             </td>
         </tr>
     </c:forEach>
+    </tbody>
 </table>
 <form method="post" action="/create">
     <table>

@@ -18,7 +18,7 @@ public class CompanyRepository {
     protected Connection getConnection() {
         Connection connection = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(Constants.URL, Constants.USER, Constants.PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -74,15 +74,15 @@ public class CompanyRepository {
                 String name = resultSet.getString("name");
                 String domain = resultSet.getString("domain");
                 String createdAt = resultSet.getString("createdAt");
-                companyList.add(new Company(id, name, domain, createdAt));
+                Company company = new Company(id, name, domain, createdAt);
+                companyList.add(company);
 
-                resultSet.close();
-                preparedStatement.close();
-                disconnect();
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        disconnect();
         return companyList;
     }
 
@@ -94,7 +94,7 @@ public class CompanyRepository {
             preparedStatement.setString(2, company.getDomain());
             preparedStatement.setString(3, company.getCreatedAt());
             preparedStatement.executeUpdate();
-            preparedStatement.close();
+
             disconnect();
         } catch (SQLException e) {
             e.printStackTrace();

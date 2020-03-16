@@ -16,24 +16,30 @@
     <th>
         Company Domain
     </th>
-    <th>Date</th>
+    <th>
+        Date
+    </th>
+    <th colspan="2
+">
+        Actions
+    </th>
     </thead>
     <tbody>
-    <c:forEach items="${companyList}" var="c">
+    <c:forEach var="company" items="${companyList}">
         <tr>
-            <td>${c.getId()}</td>
-            <td>${c.getName()}</td>
-            <td>${c.getDomain()}</td>
-            <td>${c.getCreatedAt()}</td>
+            <td>${company.getId()}</td>
+            <td>${company.name}</td>
+            <td>${company.domain}</td>
+            <td>${company.createdAt}</td>
             <td>
-                <form method="get" action="/company/delete">
-                    <input type="hidden" name="id" value="${c.getId()}">
+                <form method="get" action="/delete">
+                    <input type="hidden" name="id" value="${company.getId()}">
                     <input type="submit" name="submit" value="Delete!">
                 </form>
             </td>
             <td>
-                <form method="get" action="/company/update">
-                    <input type="hidden" name="id" value="${c.getId()}">
+                <form method="get" action="/update">
+                    <input type="hidden" name="id" value="${company.getId()}">
                     <input type="submit" name="submit" value="Update!">
                 </form>
             </td>
@@ -41,7 +47,7 @@
     </c:forEach>
     </tbody>
 </table>
-<form method="post" action="/create">
+<form method="post" action="/company/create">
     <table>
         <tr>
             <td>

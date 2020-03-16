@@ -54,4 +54,14 @@ public class Company {
     public void setCreatedAt(String createdAt) {
         this.createdAt = createdAt;
     }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", domain='" + domain + '\'' +
+                ", createdAt='" + createdAt + '\'' +
+                '}';
+    }
 }

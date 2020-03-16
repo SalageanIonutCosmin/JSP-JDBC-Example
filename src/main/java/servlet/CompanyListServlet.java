@@ -17,11 +17,9 @@ public class CompanyListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        companyRepository = new CompanyRepository();
         List<Company> companyList = companyRepository.findAllCompanies();
         request.setAttribute("companyList", companyList);
-        request.getRequestDispatcher("companyListView.jsp").forward(request, response);
-        for (Company c : companyList) {
-            System.out.println(c);
-        }
+        request.getRequestDispatcher("/companyListView.jsp").forward(request, response);
     }
 }

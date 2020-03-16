@@ -86,7 +86,7 @@ public class CompanyRepository {
         return companyList;
     }
 
-    public void addCompany(Company company) {
+    public Company addCompany(Company company) {
         try {
             Connection connection = getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(ADD_COMPANY);
@@ -99,6 +99,7 @@ public class CompanyRepository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return company;
     }
 
     public boolean deleteCompany(Company company) {

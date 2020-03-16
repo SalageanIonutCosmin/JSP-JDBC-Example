@@ -19,8 +19,7 @@
     <th>
         Date
     </th>
-    <th colspan="2
-">
+    <th colspan="2">
         Actions
     </th>
     </thead>
@@ -45,40 +44,16 @@
             </td>
         </tr>
     </c:forEach>
+    <tr>
+        <td colspan="3">
+            <a href="http://localhost:8080/JSPExample_war_exploded">Home</a>
+        </td>
+        <td colspan="3">
+            <a href="http://localhost:8080/JSPExample_war_exploded/company/create">Add Company</a>
+        </td>
+    </tr>
     </tbody>
 </table>
-<form method="post" action="/company/create">
-    <table>
-        <tr>
-            <td>
-                Company name
-            </td>
-            <td>
-                <input type="text" name="name" placeholder="Company name">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Company domain
-            </td>
-            <td>
-                <input type="text" name="domain" placeholder="Company name">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Date
-            </td>
-            <td>
-                <input type="text" name="name" placeholder="Date">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="submit" name="submit" value="Add!">
-            </td>
-        </tr>
-    </table>
-</form>
+
 </body>
 </html>

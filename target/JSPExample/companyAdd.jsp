@@ -12,30 +12,36 @@
 </head>
 <body>
 <h1>Add Company</h1>
-<form action="/company/create" method="post">
+<form action="<%=request.getContextPath()%>/company/create" method="post">
     <table>
         <tr>
             <td>
-                Company name
+                <label for="name" class="control-label">
+                    Company name
+                </label>
             </td>
             <td>
-                <input type="text" name="name" placeholder="Company name">
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Company domain
-            </td>
-            <td>
-                <input type="text" name="domain" placeholder="Company name">
+                <input type="text" name="name" id="name" class="form-label" placeholder="Company name">
             </td>
         </tr>
         <tr>
             <td>
-                Date
+                <label for="domain" class="control-label">
+                    Company domain
+                </label>
             </td>
             <td>
-                <input type="text" name="createdAt" placeholder="Date">
+                <input type="text" name="domain" id="domain" class="form-label" placeholder="Company name">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="createdAt" class="control-label">
+                    CreatedAt
+                </label>
+            </td>
+            <td>
+                <input type="text" name="createdAt" id="createdAt" class="form-label" placeholder="Date">
             </td>
         </tr>
         <tr>

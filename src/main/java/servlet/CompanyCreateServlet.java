@@ -36,7 +36,7 @@ public class CompanyCreateServlet extends HttpServlet {
 
         request.setAttribute("company", company);
 
-        request.getRequestDispatcher("/companyListView.jsp").forward(request, response);
+        response.sendRedirect("http://localhost:8080/JSPExample_war_exploded/company/list");
     }
 
 }

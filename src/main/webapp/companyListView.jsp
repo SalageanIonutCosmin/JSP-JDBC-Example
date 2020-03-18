@@ -37,7 +37,7 @@
                 </form>
             </td>
             <td>
-                <form method="get" action="/update">
+                <form method="get" action="/company/update">
                     <input type="hidden" name="id" value="${company.getId()}">
                     <input type="submit" name="submit" value="Update!">
                 </form>

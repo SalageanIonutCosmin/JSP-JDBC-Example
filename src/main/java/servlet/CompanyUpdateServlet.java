@@ -16,7 +16,8 @@ public class CompanyUpdateServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Integer id = Integer.parseInt(request.getParameter("id"));
+        companyRepository = new CompanyRepository();
+        Integer id = Integer.valueOf(request.getParameter("id"));
 
         Company companyToBeUpdated = null;
 
@@ -36,13 +37,16 @@ public class CompanyUpdateServlet extends HttpServlet {
         String domain = request.getParameter("domain");
         String createdAt = request.getParameter("createdAt");
 
+        companyRepository = new CompanyRepository();
+
         for (Company company : companyRepository.findAllCompanies()) {
             if (company.getId() == id) {
                 company.setName(name);
                 company.setDomain(domain);
                 company.setCreatedAt(createdAt);
+                companyRepository.updateCompany(company);
             }
         }
-        response.sendRedirect("/company/list");
+        response.sendRedirect("http://localhost:8080/JSPExample_war_exploded/company/list");
     }
 }

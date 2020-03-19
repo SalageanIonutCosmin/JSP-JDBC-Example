@@ -31,10 +31,7 @@
             <td>${company.domain}</td>
             <td>${company.createdAt}</td>
             <td>
-                <form method="get" action="/delete">
-                    <input type="hidden" name="id" value="${company.getId()}">
-                    <input type="submit" name="submit" value="Delete!">
-                </form>
+                <a href="http://localhost:8080/JSPExample_war_exploded/company/delete?id=<c:out value='${company.getId()}' />">Delete</a>
             </td>
             <td>
                 <a href="http://localhost:8080/JSPExample_war_exploded/company/update?id=<c:out value='${company.getId()}' />">Edit</a>

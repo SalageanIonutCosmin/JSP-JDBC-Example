@@ -102,12 +102,12 @@ public class CompanyRepository {
         return company;
     }
 
-    public boolean deleteCompany(Company company) {
+    public boolean deleteCompany(Integer id) {
         boolean rowDeleted = false;
         try {
             Connection connection = getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_COMPANY);
-            preparedStatement.setInt(1, company.getId());
+            preparedStatement.setInt(1, id);
             rowDeleted = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -120,10 +120,10 @@ public class CompanyRepository {
         try {
             Connection connection = getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_COMPANY);
-            preparedStatement.setInt(1, company.getId());
-            preparedStatement.setString(2, company.getName());
-            preparedStatement.setString(3, company.getDomain());
-            preparedStatement.setString(4, company.getCreatedAt());
+            preparedStatement.setString(1, company.getName());
+            preparedStatement.setString(2, company.getDomain());
+            preparedStatement.setString(3, company.getCreatedAt());
+            preparedStatement.setInt(4, company.getId());
 
             preparedStatement.executeUpdate();
 

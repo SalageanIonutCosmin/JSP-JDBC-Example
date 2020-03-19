@@ -16,15 +16,19 @@ public class CompanyDeleteServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Integer id = Integer.parseInt(request.getParameter("id"));
+        Integer id = Integer.valueOf(request.getParameter("id"));
+        companyRepository = new CompanyRepository();
+
         Iterator<Company> iterator = companyRepository.findAllCompanies().iterator();
 
         while (iterator.hasNext()) {
-            if (iterator.next().getId() == id) {
+            Company company = iterator.next();
+            if (company.getId() == id) {
+                companyRepository.deleteCompany(id);
                 iterator.remove();
                 break;
             }
         }
-        response.sendRedirect("/company/list");
+        response.sendRedirect("http://localhost:8080/JSPExample_war_exploded/company/list");
     }
 }

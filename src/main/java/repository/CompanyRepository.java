@@ -115,8 +115,8 @@ public class CompanyRepository {
         return rowDeleted;
     }
 
-    public boolean updateCompany(Company company) {
-        boolean rowUpdated = false;
+    public Company updateCompany(Company company) {
+
         try {
             Connection connection = getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_COMPANY);
@@ -125,12 +125,13 @@ public class CompanyRepository {
             preparedStatement.setString(3, company.getDomain());
             preparedStatement.setString(4, company.getCreatedAt());
 
-            rowUpdated = preparedStatement.executeUpdate() > 0;
+            preparedStatement.executeUpdate();
+
             preparedStatement.close();
             disconnect();
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return rowUpdated;
+        return company;
     }
 }

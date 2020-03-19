@@ -14,10 +14,11 @@
 <body>
 <h2>Company Update</h2>
 <form method="post" action="http://localhost:8080/JSPExample_war_exploded//company/update">
+
     <table>
         <tr>
             <td>
-                <input type="hidden" name="id" value="<c:out value='${companyToBeUpdate.getId()}' />" class="form-control">
+                <input type="hidden" name="id" value="<c:out value='${companyToBeUpdated.getId()}' />" class="form-control">
             </td>
         </tr>
         <tr>
@@ -27,7 +28,7 @@
         </tr>
         <tr>
             <td>
-                <input type="text" name="name" value="<c:out value='${companyToBeUpdate.getName()}' />" class="form-control">
+                <input type="text" name="name" value="<c:out value='${companyToBeUpdated.getName()}' />" class="form-control">
             </td>
         </tr>
         <tr>
@@ -37,7 +38,7 @@
         </tr>
         <tr>
             <td>
-                <input type="text" name="domain" value="<c:out value='${companyToBeUpdate.getDomain()}' />" class="form-control">
+                <input type="text" name="domain" value="<c:out value='${companyToBeUpdated.getDomain()}' />" class="form-control">
             </td>
         </tr>
         <tr>
@@ -47,7 +48,7 @@
         </tr>
         <tr>
             <td>
-                <input type="text" name="createdAt" value="<c:out value='${companyToBeUpdate.getCreatedAt()}' />" class="form-control">
+                <input type="text" name="createdAt" value="<c:out value='${companyToBeUpdated.getCreatedAt()}' />" class="form-control">
             </td>
         </tr>
         <tr>

@@ -32,7 +32,7 @@ public class CompanyUpdateServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        Integer id = Integer.parseInt(request.getParameter("id"));
+        Integer id = Integer.valueOf(request.getParameter("id"));
         String name = request.getParameter("name");
         String domain = request.getParameter("domain");
         String createdAt = request.getParameter("createdAt");

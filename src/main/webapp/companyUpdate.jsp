@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: salag
@@ -16,12 +17,7 @@
     <table>
         <tr>
             <td>
-                Company Id:
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input type="text" name="id" value="${companyToBeUpdate.getId()}">
+                <input type="hidden" name="id" value="<c:out value='${companyToBeUpdate.getId()}' />" class="form-control">
             </td>
         </tr>
         <tr>
@@ -31,7 +27,7 @@
         </tr>
         <tr>
             <td>
-                <input type="text" name="name" value="${companyToBeUpdate.getName()}">
+                <input type="text" name="name" value="<c:out value='${companyToBeUpdate.getName()}' />" class="form-control">
             </td>
         </tr>
         <tr>
@@ -41,7 +37,7 @@
         </tr>
         <tr>
             <td>
-                <input type="text" name="domain" value="${companyToBeUpdate.getDomain}">
+                <input type="text" name="domain" value="<c:out value='${companyToBeUpdate.getDomain()}' />" class="form-control">
             </td>
         </tr>
         <tr>
@@ -51,7 +47,7 @@
         </tr>
         <tr>
             <td>
-                <input type="text" name="createdAt" value="${companyToBeUpdate.getCreatedAt()}">
+                <input type="text" name="createdAt" value="<c:out value='${companyToBeUpdate.getCreatedAt()}' />" class="form-control">
             </td>
         </tr>
         <tr>

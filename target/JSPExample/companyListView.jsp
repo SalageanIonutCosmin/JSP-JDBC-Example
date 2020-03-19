@@ -37,10 +37,7 @@
                 </form>
             </td>
             <td>
-                <form method="get" action="/company/update">
-                    <input type="hidden" name="id" value="${company.getId()}">
-                    <input type="submit" name="submit" value="Update!">
-                </form>
+                <a href="http://localhost:8080/JSPExample_war_exploded/company/update?id=<c:out value='${company.getId()}' />">Edit</a>
             </td>
         </tr>
     </c:forEach>
